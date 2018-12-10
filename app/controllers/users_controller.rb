@@ -17,4 +17,10 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
+    redirect_to root_path
+  end
 end

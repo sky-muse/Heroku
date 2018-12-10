@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-  get 'topics/new'
-  get 'sessions/new'
-  get 'users/new'
-  get 'pages/index'
   root 'pages#index'
   get 'pages/help'
+  get 'users/new'
+  # post "users" => "users#create"
 
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :users
   resources :topics do
@@ -20,6 +18,8 @@ Rails.application.routes.draw do
   post '/favorites', to: 'favorites#create'
 
   post '/topics/(:topic_id)/comments/new' => 'comments#new'
-
   post 'favorites/:topic_id/destroy' => 'favorites#destroy'
+
+  get 'comments/new'
+  post '/comments', to: 'comments#create'
 end

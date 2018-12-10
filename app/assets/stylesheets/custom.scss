@@ -23,10 +23,10 @@ h1, h2 {
   width: 100vw;
   height: 100vh;
   background: image-url('bg-top.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-position: center;    //画像の位置
+  background-repeat: no-repeat;   //背景を敷き詰めず、1つだけ表示
+  background-attachment: fixed;   //背景画像はボックスが動いてもブラウザ、ウィンドウ内の定位置
+  background-size: cover;   //縦横比を保持したまま表示領域全体を背景画像で覆う
   background-color: #464646;
 }
 
@@ -67,9 +67,9 @@ h1, h2 {
 
 .alert {
   margin-bottom: 0px;
-  position: fixed;
+  position: fixed;    //ある要素を画面の上部に常に表示する
   width: 100%;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .navbar-transparent {
